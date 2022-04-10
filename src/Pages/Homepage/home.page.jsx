@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./homepage.styles.css";
 import logo from "../../Assets/code-sync.png";
 import { v4 as uuid } from "uuid";
+import toast from "react-hot-toast";
 export const Home = () => {
 
   const [roomId , setRoomId] = useState('');
@@ -11,8 +12,27 @@ export const Home = () => {
     e.preventDefault();
     const id = uuid();
     setRoomId(id);
+    toast.success('New Room created')
+
     // console.log(id);
   };
+
+  const joinRoom = () =>
+  {
+    if(!roomId)
+    {
+      toast.error('No ROOM ID found!');
+      return;
+    }
+    if(!userName)
+    {
+      toast.error('Enter a valid Username!');
+      return;
+    }
+
+    
+  }
+
 
 
   return (
@@ -23,7 +43,7 @@ export const Home = () => {
         <div className="inputContainer">
           <input type="text" className="inputBox" placeholder="ROOM ID" onChange={(e)=> setRoomId(e.target.value)} value={roomId} />
           <input type="text" className="inputBox" placeholder="USERNAME" onChange={(e)=> setuserName(e.target.value)} value={userName}/>
-          <button className="btn joinbtn">JOIN</button>
+          <button className="btn joinbtn" onClick={joinRoom}>JOIN</button>
           <span className="createInfo">
             If you don't have an invite then create &nbsp;
             <a
