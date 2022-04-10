@@ -11,7 +11,7 @@ function App() {
           position="top-right"
           
           toastOptions={{
-            duration:1200,
+            duration:2000,
             success: {
               theme: {
                 primary: "#4aed88",
