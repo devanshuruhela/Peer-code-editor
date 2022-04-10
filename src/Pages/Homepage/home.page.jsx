@@ -5,15 +5,15 @@ export const Home = () => {
   return (
     <div className='homePageContainer'>
       <div className="formContainer">
-        <img src={logo} alt="code" />
+        <img src={logo} className='homepagelogo' alt="code" />
         <h4 className='main-label'> Paste invitation ROOM ID</h4>
         <div className="inputContainer">
           <input type="text" className='inputBox' placeholder='ROOM ID'/>
           <input type="text" className='inputBox' placeholder='USERNAME'/>
           <button className='btn joinbtn'>JOIN</button>
-          <span className='CreateInfo'>
+          <span className='createInfo'>
             If you don't have an invite then create &nbsp;
-            <a href="" className='createNewBtn'>new room </a>
+            <a href="google.com" className='createNewBtn'>new room </a>
           </span>
         </div>
       </div>
