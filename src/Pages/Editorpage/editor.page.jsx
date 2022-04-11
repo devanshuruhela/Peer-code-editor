@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./editorpage.styles.css";
 import logo from "../../Assets/code-sync.png";
-import Client from "../../Components/Client/client.component";
-import Editor from "../../Components/Editor/editor.component";
+import Client from "../../Components/Client/Client.component";
+import Editor from "../../Components/Editor/Editor.component";
 const EditorPage = () => {
   const [clients, setClients] = useState([
     { socketId: 1, username: "Devanshu" },

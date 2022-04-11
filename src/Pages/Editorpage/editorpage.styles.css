@@ -4,6 +4,7 @@
   padding:10px;
   border-radius: 5px;
   font-size: 15px;
+  font-weight: 550;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -70,4 +71,13 @@
 }
 .leavebtn:hover{
   filter: brightness(70%);
+}
+
+
+.CodeMirror
+{
+  min-height: calc(100vh - 20px);
+  font-size: 20px;
+  line-height: 1.6;
+  padding-top: 20px;
 }
