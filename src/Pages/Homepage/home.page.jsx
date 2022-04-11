@@ -10,7 +10,7 @@ export const Home = () => {
   const navigate = useNavigate();
 
   const [roomId , setRoomId] = useState('');
-  const [userName , setuserName] = useState('');
+  const [username , setusername] = useState('');
 
   const createNewRoom = (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ export const Home = () => {
       toast.error('Please enter a ROOM ID!');
       return;
     }
-    if(!userName)
+    if(!username)
     {
       toast.error('Please enter a USERNAME!');
       return;
@@ -36,7 +36,7 @@ export const Home = () => {
     navigate(`/editor/${roomId}` , {
       state:
       {
-        userName,
+        username,
       }
     })
 
@@ -59,7 +59,7 @@ export const Home = () => {
         <h4 className="main-label"> Paste invitation ROOM ID</h4>
         <div className="inputContainer">
           <input type="text" className="inputBox" placeholder="ROOM ID" onChange={(e)=> setRoomId(e.target.value)} value={roomId} onKeyUp={pressenter}/>
-          <input type="text" className="inputBox" placeholder="USERNAME" onChange={(e)=> setuserName(e.target.value)} value={userName} onKeyUp={pressenter}/>
+          <input type="text" className="inputBox" placeholder="USERNAME" onChange={(e)=> setusername(e.target.value)} value={username} onKeyUp={pressenter}/>
           <button className="btn joinbtn" onClick={joinRoom}>JOIN</button>
           <span className="createInfo">
             If you don't have an invite then create &nbsp;
