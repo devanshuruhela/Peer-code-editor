@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import "./editorpage.styles.css";
 import logo from "../../Assets/code-sync.png";
-import Client from "../../Components/client.component";
-const Editor = () => {
+import Client from "../../Components/Client/client.component";
+import Editor from "../../Components/Editor/editor.component";
+const EditorPage = () => {
   const [clients, setClients] = useState([
     { socketId: 1, username: "Devanshu" },
     {
       socketId: 2,
       username: "John Doe",
     },
+    
   ]);
 
   return (
-    <div className="mainConatainer">
+    <div className="mainContainer">
       <div className="leftpanel">
         <div className="leftContainer">
-          <div className="logo">
+          <div className="Logo">
             <img src={logo} alt="logo" className="logoimg" />
           </div>
           <h3>Connected</h3>
@@ -25,10 +27,14 @@ const Editor = () => {
             }
           </div>
         </div>
+        <button className="btn copybtn">Copy ROOM ID</button>
+        <button className="btn leavebtn">Leave</button>
       </div>
-      <div className="rightpanel">Our editor is here</div>
+      <div className="rightpanel">
+        <Editor/>
+      </div>
     </div>
   );
 };
 
-export default Editor;
+export default EditorPage;

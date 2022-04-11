@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter , Routes , Route } from 'react-router-dom';
 import Home from './Pages/Homepage/home.page';
-import Editor from './Pages/Editorpage/editor.page';
+import EditorPage from './Pages/Editorpage/editor.page';
 import { Toaster } from 'react-hot-toast';
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/editor/:roomId" element={<Editor />}></Route>
+          <Route path="/editor/:roomId" element={<EditorPage />}></Route>
         </Routes>
       </BrowserRouter>
     </>
