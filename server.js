@@ -1,15 +1,36 @@
 const express = require('express')
+const app = express();
 const http = require("http");
-const app  = express();
+
 // const path = require("path");
-const { Server } = require("socket.io");
+const {
+  Server
+} = require("socket.io");
+const ACTIONS = require('./src/actions');
 
-const server  = http.createServer(app);
-const io  = new Server(server);
+const server = http.createServer(app);
+const io = new Server(server);
 
-io.on('connection' , (socket) =>
+const userSocketMap = {};
+function getAllconnectedclients(roomId)
 {
-  console.log('socket connected' , socket.id);
-} )
+  return Array.from(io.sockets.adapter.rooms.get(roomId) || []).map((socketId)=>
+  {
+    return{
+      socketId,
+      username:userSocketMap[socketId]
+    }
+  });
+}
+io.on('connection', (socket) => {
+  console.log('socket connected', socket.id);
+  socket.on(ACTIONS.JOIN, ({roomId,
+    username}) => {
+    userSocketMap[socket.id] = username;
+    socket.join(roomId);
+    const clients = getAllconnectedclients(roomId);
+    console.log(clients)
+  });
+})
 const PORT = process.env.PORT || 5000;
-server.listen(PORT , ()=> console.log(`Listening on port ${PORT}`))
+server.listen(PORT, () => console.log(`Listening on port ${PORT}`))
