@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import codemirror from 'codemirror';
 import 'codemirror/lib/codemirror.css'
-import 'codemirror/mode/clike/clike'
+import 'codemirror/mode/javascript/javascript'
 import 'codemirror/theme/dracula.css'
 import 'codemirror/addon/edit/closetag'
 import 'codemirror/addon/edit/closebrackets'
@@ -14,7 +14,7 @@ const Editor = () => {
     {
       codemirror.fromTextArea(document.getElementById('realtimeEditor'),
         {
-          mode:{name:'clike' , json:true},
+          mode:{name:'javascript' , json:true},
           theme:'dracula',
           autoCloseTags: true,
           autoCloseBrackets:true,

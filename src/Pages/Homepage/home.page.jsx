@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "./homepage.styles.css";
 import logo from "../../Assets/code-sync.png";
@@ -17,8 +18,6 @@ export const Home = () => {
     const id = uuid();
     setRoomId(id);
     toast.success('New ROOM ID created')
-
-    // console.log(id);
   };
 
   const joinRoom = () =>
@@ -33,12 +32,14 @@ export const Home = () => {
       toast.error('Please enter a USERNAME!');
       return;
     }
+ 
     navigate(`/editor/${roomId}` , {
       state:
       {
         username,
       }
     })
+  
 
   }
 
@@ -65,10 +66,10 @@ export const Home = () => {
             If you don't have an invite then create &nbsp;
             <a
               onClick={createNewRoom}
-              href="google.com"
+              href=""
               className="createNewBtn"
             >
-              new room{" "}
+              new room
             </a>
           </span>
         </div>
