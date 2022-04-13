@@ -91,6 +91,8 @@ const EditorPage = () => {
       </div>
       <div className="rightpanel">
         <Editor
+        socketRef={socketRef}
+        roomId={roomId}
         />
       </div>
     </div>
