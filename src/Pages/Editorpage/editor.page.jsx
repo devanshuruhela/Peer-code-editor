@@ -39,7 +39,7 @@ const EditorPage = () => {
           if(username !== location.state?.username)
           {
             toast.success(`${username} joined the room.`);
-            console.log(`${username} joined`);
+            // console.log(`${username} joined`);
           }
           setClients(clients);
           socketRef.current.emit(ACTIONS.SYNC_CODE, {
@@ -69,11 +69,16 @@ const EditorPage = () => {
   async function copyRoomId() {
         try {
             await navigator.clipboard.writeText(roomId);
-            toast.success('Room ID has been copied to your clipboard');
+            toast.success('Room ID has been copied');
         } catch (err) {
             toast.error('Could not copy the Room ID');
             console.error(err);
         }
+    }
+
+    function leaveRoom()
+    {
+      reactNavigator('/')
     }
   if(!location.state){
    return <Navigate to='/'/>
@@ -94,7 +99,7 @@ const EditorPage = () => {
           </div>
         </div>
         <button className="btn copybtn" onClick={copyRoomId} >Copy ROOM ID</button>
-        <button className="btn leavebtn" >Leave</button>
+        <button className="btn leavebtn" onClick={leaveRoom} >Leave</button>
       </div>
       <div className="rightpanel">
         <Editor
