@@ -24,7 +24,7 @@ const EditorPage = () => {
 
       function handleErrors(e)
       {
-        console.log('socket error' ,e);
+        console.log('socket error' , e);
         toast.error('Connection failed, try again later.');
         reactNavigator('/');
       }
@@ -47,11 +47,27 @@ const EditorPage = () => {
             socketId,
           });
         });
+        socketRef.current.on(
+                ACTIONS.DISCONNECTED,
+                ({ socketId, username }) => {
+                    toast.success(`${username} left the room.`);
+                    setClients((prev) => {
+                        return prev.filter(
+                            (client) => client.socketId !== socketId
+                        );
+                    });
+                }
+            );
     };
     init();
+    return () => {
+            socketRef.current.disconnect();
+            socketRef.current.off(ACTIONS.JOINED);
+            socketRef.current.off(ACTIONS.DISCONNECTED);
+        };
   },[]);
 
-  
+
   if(!location.state){
    return <Navigate to='/'/>
 }
@@ -70,11 +86,12 @@ const EditorPage = () => {
             }
           </div>
         </div>
-        <button className="btn copybtn">Copy ROOM ID</button>
-        <button className="btn leavebtn">Leave</button>
+        <button className="btn copybtn" >Copy ROOM ID</button>
+        <button className="btn leavebtn" >Leave</button>
       </div>
       <div className="rightpanel">
-        <Editor/>
+        <Editor
+        />
       </div>
     </div>
   );
