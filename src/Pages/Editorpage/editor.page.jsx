@@ -105,6 +105,7 @@ const EditorPage = () => {
         <Editor
         socketRef={socketRef}
         roomId={roomId}
+        codeChange={(code)=>{codeRef.current = code}}
         />
       </div>
     </div>
