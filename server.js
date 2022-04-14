@@ -11,6 +11,11 @@ const ACTIONS = require("./src/actions");
 const io = new Server(server);
 const PORT = process.env.PORT || 5000;
 const userSocketMap = {};
+
+app.use(express.static("build"));
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 function getAllconnectedclients(roomId) {
   return Array.from(io.sockets.adapter.rooms.get(roomId) || []).map(
     (socketId) => {
