@@ -23,7 +23,7 @@ footer{
 }
 
 footer a{
-  color:#4aee88;
+  color:#96f0ff;
 }
 
 .inputContainer
@@ -41,8 +41,13 @@ footer a{
 
 .homepagelogo
 {
-  height: 80px;
-  margin-bottom: 30px;
+  
+  height: 150px;
+  width: 270px;
+  display: block;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .inputBox
 {
@@ -67,10 +72,12 @@ footer a{
 
 .joinbtn
 {
-  background: #4aed88;
+  background: #96f0ff;
   width: 100px;
   margin-left: auto;
+  
 }
+
 
 .joinbtn:hover
 {
@@ -85,10 +92,10 @@ footer a{
 
 .createNewBtn
 {
-  color: #4aed88;
+  color: #8e9fc1;
   text-decoration: none;
   user-select: none;
-  border-bottom: 1px solid #4aed88;
+  border-bottom: 1px solid #8e9fc1;
   transition: all 0.3s ease-in-out;
 }
 .createNewBtn:hover , footer a:hover

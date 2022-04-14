@@ -26,7 +26,7 @@ const Editor = ({socketRef , roomId , codeChange}) => {
 
       editorRef.current.on('change' , (instance , changes)=>
       {
-        console.log('changes', changes)
+        // console.log('changes', changes)
         const {origin} = changes;
         const code= instance.getValue();
         codeChange(code);
@@ -39,7 +39,7 @@ const Editor = ({socketRef , roomId , codeChange}) => {
 
           });
         }
-        console.log(code)
+        // console.log(code)
       })
 
       

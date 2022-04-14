@@ -3,15 +3,12 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const path = require("path");
-// const cors = require('cors');
 const { Server } = require("socket.io");
 const ACTIONS = require("./src/actions");
-// const { Action } = require("history");
+
 
 
 const io = new Server(server);
-
-// app.use(cors());
 const PORT = process.env.PORT || 5000;
 const userSocketMap = {};
 function getAllconnectedclients(roomId) {
@@ -26,7 +23,7 @@ function getAllconnectedclients(roomId) {
 }
 
 io.on("connection", (socket) => {
-  console.log('socket connected', socket.id);
+  // console.log('socket connected', socket.id);
 
   socket.on(ACTIONS.JOIN, ({ roomId, username }) => {
     userSocketMap[socket.id] = username;

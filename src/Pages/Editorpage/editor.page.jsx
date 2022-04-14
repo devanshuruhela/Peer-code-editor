@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./editorpage.styles.css";
 import ACTIONS from "../../Actions";
-import logo from "../../Assets/code-sync.png";
+import logo from "../../Assets/logo.png"
 import Client from "../../Components/Client/Client.component";
 import Editor from "../../Components/Editor/Editor.component";
 import {initSocket} from '../../socket.js'
@@ -24,7 +24,7 @@ const EditorPage = () => {
 
       function handleErrors(e)
       {
-        console.log('socket error' , e);
+        // console.log('socket error' , e);
         toast.error('Connection failed, try again later.');
         reactNavigator('/');
       }

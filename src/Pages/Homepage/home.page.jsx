@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "./homepage.styles.css";
-import logo from "../../Assets/code-sync.png";
+import logo from '../../Assets/logo.png'
 import { v4 as uuid } from "uuid";
 import toast from "react-hot-toast";
 
@@ -77,7 +77,7 @@ export const Home = () => {
       <footer>
         <h4>
           Built with love By{" "}
-          <a href="https://github.com/devanshuruhela">Devanshu</a>{" "}
+          <a href="https://github.com/devanshuruhela" target={"_blank"} rel="noreferrer">Devanshu</a>{" "}
         </h4>
       </footer>
     </div>
