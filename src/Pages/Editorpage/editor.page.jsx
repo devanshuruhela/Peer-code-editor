@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./editorpage.styles.css";
-import ACTIONS from "../../../src/Actions";
+import ACTIONS from "../../Actions.js";
 import logo from "../../Assets/logo.png"
 import Client from "../../Components/Client/Client.component";
 import Editor from "../../Components/Editor/Editor.component";
