@@ -5,7 +5,7 @@ import 'codemirror/mode/javascript/javascript'
 import 'codemirror/theme/dracula.css'
 import 'codemirror/addon/edit/closetag'
 import 'codemirror/addon/edit/closebrackets'
-import ACTIONS from '../../Actions';
+import ACTIONS from '../../actions';
 
 const Editor = ({socketRef , roomId , codeChange}) => {
   const editorRef = useRef(null);
