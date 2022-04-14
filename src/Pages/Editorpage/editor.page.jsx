@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import "./editorpage.styles.css";
 import ACTIONS from "../../actions";
 import logo from "../../Assets/logo.png"
-import Client from "../../Components/Client/Client.component";
-import Editor from "../../Components/Editor/Editor.component";
+import Client from "../../Components/Client/client.component";
+import Editor from "../../Components/Editor/editor.component";
 import {initSocket} from '../../socket.js'
 import { Navigate, useLocation ,useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
